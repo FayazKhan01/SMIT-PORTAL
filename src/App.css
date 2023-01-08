@@ -1,3 +1,24 @@
+
+@media (max-width:420px) {
+  .headerMenu{
+    display: none;
+  }
+  .container{
+    height: 6vh;
+  }
+  .logo{
+    display: inline;
+  }
+}
+@media (min-width:420px) {
+  .menuIcon{
+    display: none;
+  }
+  .logo{
+    display: inline;
+  }
+}
+
 .App {
   text-align: center;
 }

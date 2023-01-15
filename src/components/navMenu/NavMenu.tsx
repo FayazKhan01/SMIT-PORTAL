@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from "../components/logo.png";
 import {
   InfoCircleOutlined,
   FormOutlined,
@@ -8,6 +7,7 @@ import {
   ContactsOutlined,
 } from "@ant-design/icons";
 import { Menu } from "antd";
+import { NavLink } from 'react-router-dom';
 
 export default function NavMenu({ isInLine = false }) {
   return (
@@ -16,7 +16,6 @@ export default function NavMenu({ isInLine = false }) {
         backgroundColor: "green",
         color: "white",
         fontSize: 20,
-        border: 1,
         display: "flex",
         justifyContent: "center",
         height:"62px"
@@ -42,7 +41,7 @@ export default function NavMenu({ isInLine = false }) {
         },
         {
           icon: <BarsOutlined />,
-          label: <a href="courses">Courses</a>,
+          label: <a href="./courses">Courses</a>,
           key: "courses",
         },
         {
@@ -57,9 +56,9 @@ export default function NavMenu({ isInLine = false }) {
         {
           icon: <ContactsOutlined />,
           label: (
-            <a href="./contact-us" rel="">
+            <NavLink className="active" to="./contact-us" rel="">
               Contact Us
-            </a>
+            </NavLink>
           ),
           key: "contact-us",
         },

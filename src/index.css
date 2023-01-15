@@ -12,6 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a.active {
+  color: blue;
+}
+.box{
+    flex: 25%;
+    justify-content: space-between;
+}
+
 
 @tailwind base;
 @tailwind components;

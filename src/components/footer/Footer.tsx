@@ -4,16 +4,18 @@ const footerStyle = {
   height: "50px",
   display: "flex",
   justifyContent: "center",
-  marginTop: "10px",
-  backgroundColor: "green",
+  marginTop: "10px",  
+ backgroundColor: "darkslategray",
   color: "white",
+  paddingTop:"10px"
 };
-function Footer(){
-return(
-      
-      <div style={footerStyle} className="text-slate-500">
-        &copy; copyright 2022. All Rights Reserved
+function Footer() {
+  return (
+    <div style={footerStyle}>
+      <div>
+        Copyright &copy; 2023 by Saylani Welfare Int Trust. All Rights Reserved
       </div>
+    </div>
   );
 }
 

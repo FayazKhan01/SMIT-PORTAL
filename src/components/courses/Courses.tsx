@@ -1,4 +1,5 @@
 import { Button, Col, Divider, Row, Image, Card } from "antd";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
@@ -13,7 +14,7 @@ const style: React.CSSProperties = {
 
 function Courses() {
   return (
-    <>
+    <div>
       <Divider orientation="center">
         <div className="text-4xl">Courses SMIT Offered</div>
       </Divider>
@@ -30,11 +31,11 @@ function Courses() {
                 
               />
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel=" ">
                 Enroll
-                </a>
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
@@ -49,11 +50,11 @@ function Courses() {
                 title="Graphics Designing "
               />
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel=" ">
                 Enroll
-                </a>
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
@@ -68,11 +69,11 @@ function Courses() {
                 title="Video Editing"
               />
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel="">
                 Enroll
-                </a>
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
@@ -87,11 +88,11 @@ function Courses() {
             >
               <Meta title="CCNA"  />
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel="">
                 Enroll
-                </a>
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
@@ -104,11 +105,11 @@ function Courses() {
             >
               <Meta title="AI Chatbot"/>
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel="">
-                  Enroll
-                </a>
+                Enroll
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
@@ -121,16 +122,16 @@ function Courses() {
             >
               <Meta title="Mobile Repairing"/>
               <br />
+              <Link to="/Addmission-form">
               <Button block type="primary" className="bg-sky-800">
-                <a href="./Addmission-form" rel="">
-                  Enroll
-                </a>
+                Enroll
               </Button>
+              </Link>
             </Card>
           </div>
         </Col>
       </Row>
-    </>
+    </div>
   );
 }
 

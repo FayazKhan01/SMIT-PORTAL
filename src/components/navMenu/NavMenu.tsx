@@ -18,6 +18,7 @@ export default function NavMenu({ isInLine = false }) {
         fontSize: 20,
         display: "flex",
         justifyContent: "center",
+        marginRight:"-70px",
         height:"62px"
       }}
       mode={isInLine ? "inline" : "horizontal"}

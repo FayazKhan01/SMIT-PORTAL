@@ -9,8 +9,8 @@ export default function Home() {
     <>
         <Navbar />
         <ImageSlider />
-        <hr  style={{fontWeight:"bold", fontSize:"5px"}}/>
         <Courses/>
+        <h1  style={{border:"2px solid darkslategray"}}><hr/></h1>
         <Footer />
     </>
 )

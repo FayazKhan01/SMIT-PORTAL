@@ -5,7 +5,7 @@ const footerStyle = {
   display: "flex",
   justifyContent: "center",
   marginTop: "10px",  
- backgroundColor: "darkslategray",
+  backgroundColor: "darkslategray",
   color: "white",
   paddingTop:"10px"
 };

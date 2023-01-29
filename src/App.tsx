@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from "./components/home/Home";
 import AddForm from './components/addForm/AddForm';
 import Courses from './components/courses/Courses';
+import AboutUs from './components/aboutUS/AboutUs';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="courses" element={<Courses />} />
             <Route path="Addmission-form" element={<AddForm />} />  
-            {/* <Route path="about-us" element={<AboutUs />} />   */}
+            <Route path="about-us" element={<AboutUs />} />  
                       
           </Route>
         </Routes>

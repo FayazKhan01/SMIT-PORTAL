@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import firebase from 'firebase/app';
 import {
   AutoComplete,
   Button,
@@ -40,7 +41,10 @@ const tailFormItemLayout = {
 const AddForm: React.FC = () => {
   const [form] = Form.useForm();
 
+  const [userData,setFormData]=useState({});
+
   const onFinish = (values: any) => {
+    setFormData(values);
     console.log("Received values of form: ", values);
   };
 
@@ -77,6 +81,40 @@ const AddForm: React.FC = () => {
       },
     ],
   };
+  // https://smit-portal-29dad-default-rtdb.firebaseio.com/
+
+  // const [useData,setUserData]= useState({
+  //   firstName:"",
+  //   lastName:"",
+  //   fatherName:"",
+  //   email:"",
+  //   password:"",
+  //   confirmPassword:"",
+  //   phone:"",
+  //   dateOfBirth:"",
+  //   intro:"",
+  //   gender:"",
+  //   courses:"",
+  //   city:"",
+  //   homeAddress:"",
+  //   agreement:"",
+  // });
+  // const handleSubmit =()=>{
+  //   form.getFieldValue('firstName');
+  //   form.getFieldValue('lastName');
+  //   form.getFieldValue('fatherName');
+  //   form.getFieldValue('email');
+  //   form.getFieldValue('password');
+  //   form.getFieldValue('connfirmPassword');
+  //   form.getFieldValue('phone');
+  //   form.getFieldValue('dateOfBirtnn');
+  //   form.getFieldValue('gender');
+  //   form.getFieldValue('courses');
+  //   form.getFieldValue('city');
+  //   form.getFieldValue('intro');
+  //   form.getFieldValue('homeAddress');
+  //   form.getFieldValue('agreement');
+  // }
 
   return (
     <div
@@ -84,6 +122,7 @@ const AddForm: React.FC = () => {
       style={{ border: "1px", marginTop: "20px", padding: "10px" }}
     >
       <Form
+        method="POST"
         {...formItemLayout}
         form={form}
         autoComplete ="off"
@@ -104,12 +143,12 @@ const AddForm: React.FC = () => {
           <h1 className="center">Please Fill Addmission Form .</h1>
         </Form.Item>
         <Form.Item
-          name="fullname"
-          label="Full Name"
+          name="firstName"
+          label="First Name"
           rules={[
             {
               required: true,
-              message: "Please input your fullname!",
+              message: "Please input your FirstName!",
               whitespace: true,
             },
           ]}
@@ -118,12 +157,26 @@ const AddForm: React.FC = () => {
           <Input />
         </Form.Item>
         <Form.Item
-          name="fathername"
+          name="lastName"
+          label="Last Name"
+          rules={[
+            {
+              required: true,
+              message: "Please enter your lastname!",
+              whitespace: true,
+            },
+          ]}
+          hasFeedback
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name="fatherName"
           label="Father Name"
           rules={[
             {
               required: true,
-              message: "Please input your fathername!",
+              message: "Please enter your fathername!",
               whitespace: true,
             },
           ]}
@@ -137,11 +190,11 @@ const AddForm: React.FC = () => {
           rules={[
             {
               type: "email",
-              message: "The input is not valid E-mail!",
+              message: "The enter is not valid E-mail!",
             },
             {
               required: true,
-              message: "Please input your E-mail!",
+              message: "Please erter your E-mail!",
             },
           ]}
           hasFeedback
@@ -155,7 +208,7 @@ const AddForm: React.FC = () => {
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: "Please enter your password!",
             },
           ]}
           hasFeedback
@@ -164,7 +217,7 @@ const AddForm: React.FC = () => {
         </Form.Item>
 
         <Form.Item
-          name="confirm"
+          name="confirmPassword"
           label="Confirm Password"
           dependencies={["password"]}
           hasFeedback
@@ -195,7 +248,7 @@ const AddForm: React.FC = () => {
           rules={[
             {
               required: true,
-              message: "Please input your phone number!"},
+              message: "Please enter your phone number!"},
               {type:"number"},
               {min: 9},
               {max: 13},
@@ -205,7 +258,9 @@ const AddForm: React.FC = () => {
           <Input addonBefore={prefixSelector} style={{ width: "100%" }} />
         </Form.Item>
 
-        <Form.Item name="date-picker" label="Date of Birth" {...config}
+        <Form.Item 
+          name="dateOfBirth" 
+          label="Date of Birth" {...config}
           hasFeedback>
           <DatePicker placeholder="Chose date of birth" />
         </Form.Item>
@@ -263,7 +318,7 @@ const AddForm: React.FC = () => {
         </Form.Item>
         
         <Form.Item
-          name="residence"
+          name="homeAddress"
           label="Home Address"
           rules={[
             {
@@ -298,7 +353,7 @@ const AddForm: React.FC = () => {
         <Form.Item {...tailFormItemLayout}>
           <Row>
             <Col span={14}>
-            <Button type="primary" htmlType="submit" className="bg-sky-800">
+            <Button type="primary" htmlType="submit"  className="bg-sky-800">
               Register
             </Button>
             </Col>
@@ -310,6 +365,7 @@ const AddForm: React.FC = () => {
               </Button>
             </Col>
           </Row>
+
         </Form.Item>
       </Form>
     </div>

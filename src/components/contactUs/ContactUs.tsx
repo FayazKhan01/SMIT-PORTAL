@@ -34,7 +34,7 @@ export default function ContactUs() {
         </Divider>
         <Row>
           <Col className="text-4xl" style={styling}>
-            <img src="./images/contact.jpg" alt="contactImage" />
+            <img src="./images/contact.jpg" alt="contact-us Image" />
           </Col>
         </Row>
         <Col>
